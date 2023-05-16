@@ -1,0 +1,26 @@
+import react from 'react'
+import { RectButton, RectButtonProps } from 'react-native-gesture-handler'
+import {
+    Text,
+    View,
+} from 'react-native';
+
+import { styles } from './styles';
+
+type Props = RectButtonProps & {
+    title: string;
+}
+
+export function Button({ title, ...rest }: Props) {
+    return (
+        <RectButton // elemento de click
+            style={styles.conteiner}
+            {...rest}
+        >
+            <Text style={styles.title}>
+                {title}
+            </Text>
+        </RectButton>
+    )
+}
+
