@@ -26,6 +26,13 @@ export default function AppointmentCreate() {
     function handleOpenGuilds() {
         setOpenGuildsModal(true)
     }
+    function handleCloseGuilds() {
+        setOpenGuildsModal(false)
+    }
+
+    function handleCategorySelect(categoryId: string) {
+        setCategory(categoryId)
+    }
 
     function handleGuildsSelect(guildSelect: GuildProps) {
         setGuild(guildSelect)
@@ -38,8 +45,8 @@ export default function AppointmentCreate() {
             style={styles.conteiner}
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         >
-            <ScrollView>
-                <Background>
+            <Background>
+                <ScrollView>
                     <Header
                         title='Agendar partida'
                     />
@@ -51,7 +58,7 @@ export default function AppointmentCreate() {
                     </Text>
                     <CategorySelect
                         hasCheckBox
-                        setCategory={setCategory}
+                        setCategory={handleCategorySelect}
                         categorySelected={category}
                     />
 
@@ -79,7 +86,7 @@ export default function AppointmentCreate() {
 
                         <View style={styles.field}>
                             <View >
-                                <Text style={styles.label}>
+                                <Text style={[styles.label, { marginBottom: 12 }]}>
                                     Dia e mês
                                 </Text>
 
@@ -93,7 +100,7 @@ export default function AppointmentCreate() {
                             </View>
 
                             <View >
-                                <Text style={styles.label}>
+                                <Text style={[styles.label, { marginBottom: 12 }]}>
                                     Hora e minuto
                                 </Text>
 
@@ -131,10 +138,10 @@ export default function AppointmentCreate() {
                         </View>
 
                     </View>
-                </Background >
-            </ScrollView>
+                </ScrollView>
+            </Background >
 
-            <ModalView visible={openGuildsModal}>
+            <ModalView visible={openGuildsModal} closeModal={handleCloseGuilds}>
                 <Guilds handleGuildsSelect={handleGuildsSelect} />
             </ModalView>
         </KeyboardAvoidingView>

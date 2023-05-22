@@ -7,6 +7,7 @@ import  AppointmentCreate  from '../screens/appointmentsCreate'
 import { SignIn } from '../screens/signin'
 import { theme } from '../global/styles/theme';
 
+
 const Stack = createStackNavigator();
 
 export function AuthRoutes() {

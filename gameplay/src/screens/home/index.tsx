@@ -26,7 +26,7 @@ export function Home() {
                 id: '1',
                 name: 'Lendarios',
                 icon: null,
-                owner: true
+                owner: false
             },
             category: "1",
             date: '22/06 as 20:00h',
@@ -50,7 +50,7 @@ export function Home() {
                 id: '1',
                 name: 'Lendarios',
                 icon: null,
-                owner: true
+                owner: false
             },
             category: "1",
             date: '22/06 as 20:00h',

@@ -17,7 +17,7 @@ export const style = StyleSheet.create({
     subtitle:{
         fontFamily: theme.fonts.text400,
         color: theme.colors.highlight,
-        fontSize: 18,
+        fontSize: 13,
     }
 
 });
