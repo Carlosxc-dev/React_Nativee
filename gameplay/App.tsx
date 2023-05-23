@@ -4,7 +4,7 @@ import { Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter';
 import { Rajdhani_700Bold, Rajdhani_500Medium } from '@expo-google-fonts/rajdhani';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
-import { AuthProvider } from './src/components/hooks/auth'
+import { AuthProvider } from './src/hooks/auth'
 
 import { Background } from './src/components/background';
 import { Routes } from './src/routes/index'
