@@ -18,11 +18,11 @@ export function SignIn() {
 	const {user, signIn} = useAuth();
 	
 
-	function handleSignIn() {
+	async function handleSignIn() {
 		try {
 			await signIn()
 		} catch (error) {
-			Alert.alert(error)
+			Alert.alert(`${error}`)
 		}
 	}
 

@@ -34,14 +34,16 @@ function AuthProvider({ children }: AuthProviderProps) {
     const [user, setUser] = useState<User>({} as User)
     const [loading, setLoading] = useState(false) // saber a aplicacao terminou
 
-    function signIn() {
+    async function signIn() {
         try {
 
             setLoading(true)
 
             const authUrl = `${api.defaults.baseURL}/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`
-            AuthSession.
-            startAsync({ authUrl })
+            
+            const response = AuthSession.startAsync({ authUrl })
+            console.log(response);
+            
 
         } catch {
             throw new Error("Nao foi possivel autenticar");
