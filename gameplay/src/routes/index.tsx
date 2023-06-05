@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavigationContainer } from "@react-navigation/native"
 
 import { AuthRoutes } from './auth.routes'
-import { navTheme } from './style';
+import { useAuth } from '../hooks/auth';
+import { SignIn } from '../screens/signin';
 
 export function Routes() {
+
+    const {user} = useAuth()
+
     return (
         //defini o goBack ir para traz 
-        <NavigationContainer
-            theme={navTheme}
-        >
-            <AuthRoutes />
+        <NavigationContainer >
+            {user.id ?  <AuthRoutes /> : <SignIn/>}
         </NavigationContainer>
     )
 }
