@@ -12,7 +12,7 @@ export function Routes() {
     return (
         //defini o goBack ir para traz 
         <NavigationContainer >
-            {user.id ?  <AuthRoutes /> : <SignIn/>}
+            {user.id ?  <AuthRoutes /> : <SignIn/>}     {/*erro esta aqui*/}
         </NavigationContainer>
     )
 }
